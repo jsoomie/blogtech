@@ -22,6 +22,8 @@ app.engine(
     })
 );
 
+app.use(express.static("public"));
+
 // Test
 app.get("/", (req, res) => {
     res.render("index");
