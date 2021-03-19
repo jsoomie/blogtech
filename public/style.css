@@ -17,9 +17,29 @@ li {
 }
 
 #nav-container {
-    border: 1px solid red;
+    padding: 1rem;
+    background-color: #abdee6;
+    color: #333;
+}
+
+#nav-container li {
+    padding-right: 0.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 #nav-bar {
     display: flex;
+}
+
+#nav-title {
+    color: #cbaacb;
+    font-size: 2.5rem;
+    font-weight: bold;
+    width: fit-content;
+    padding: 0.5rem;
+    padding-right: 0.9rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: -2px 2px 8px #ff968a;
 }
