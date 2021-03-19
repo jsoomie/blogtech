@@ -1,0 +1,1 @@
+CREATE DATABASE blogtech_db;
