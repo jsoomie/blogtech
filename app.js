@@ -9,9 +9,6 @@ const mysql = require("mysql2");
 const session = require("express-session");
 const bcrypt = require("bcrypt");
 
-// Error message to be used
-const errm = `ERR: ${err.message} ${err.stack}`;
-
 // Port
 const PORT = process.env.PORT || 3001;
 
@@ -25,10 +22,15 @@ app.engine(
     })
 );
 
+// Test
+app.get("/", (req, res) => {
+    res.render("index");
+});
+
 // start server, will sequelize after working things work
 app.listen(PORT, (err) => {
     if (err) {
-        console.log(errm);
+        console.log(`ERR: ${err.message} ${err.stack}`);
     }
     console.log(`Server listening on port ${PORT}`);
 });
