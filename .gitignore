@@ -1,3 +1,6 @@
+# Cutom logs
+node_modules/
+
 # Logs
 logs
 *.log
