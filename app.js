@@ -8,6 +8,7 @@ const SequelizeStore = require("connect-session-sequelize");
 const mysql = require("mysql2");
 const session = require("express-session");
 const bcrypt = require("bcrypt");
+const { urlencoded } = require("express");
 
 // Port
 const PORT = process.env.PORT || 3001;
@@ -24,6 +25,8 @@ app.engine(
 
 // Middleware
 app.use(express.static("public"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Test
 app.get("/", (req, res) => {
