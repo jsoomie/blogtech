@@ -35,10 +35,17 @@ app.get("/", (req, res) => {
     });
 });
 
+// Testing dashboard page
+app.get("/dashboard", (req, res) => {
+    res.render("dashboard", {
+        title: "DASHBOARD",
+    });
+});
+
 // 404 catch all
 app.use((req, res) => {
     res.status(404).render("404", {
-        title: "404",
+        title: "404 - Page Not Found",
     });
 });
 

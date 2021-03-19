@@ -53,7 +53,7 @@ a {
     box-shadow: -2px 2px 8px #ff968a;
 }
 
-#main-container {
+.main-container {
     padding: 1rem;
 }
 
@@ -62,4 +62,11 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#missingpage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
 }
