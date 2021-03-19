@@ -31,7 +31,7 @@ app.use(express.urlencoded({ extended: true }));
 // Testing home page
 app.get("/", (req, res) => {
     res.render("index", {
-        title: "Home",
+        title: "BLOGTECH",
     });
 });
 
