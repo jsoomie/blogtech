@@ -16,6 +16,11 @@ li {
     list-style-type: none;
 }
 
+a {
+    text-decoration: none;
+    color: #333;
+}
+
 #nav-container {
     padding: 1rem;
     background-color: #abdee6;
@@ -26,6 +31,10 @@ li {
     padding-right: 0.5rem;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
+}
+
+#nav-container a:hover {
+    color: white;
 }
 
 #nav-bar {
@@ -42,4 +51,15 @@ li {
     background-color: white;
     border-radius: 10px;
     box-shadow: -2px 2px 8px #ff968a;
+}
+
+#main-container {
+    padding: 1rem;
+}
+
+#footer-container {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
