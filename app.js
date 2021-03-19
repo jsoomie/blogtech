@@ -35,11 +35,11 @@ app.get("/", (req, res) => {
     });
 });
 
-app.use(req, res) => {
+app.use((req, res) => {
     res.status(404).render("404", {
-        title: "404"
-    })
-}
+        title: "404",
+    });
+});
 
 // start server, will sequelize after working things work
 app.listen(PORT, (err) => {
