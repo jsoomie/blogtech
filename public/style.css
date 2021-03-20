@@ -89,3 +89,21 @@ a {
     background-color: #eceae4;
     padding: 1rem;
 }
+
+.button {
+    padding: 1rem;
+    color: white;
+    background-color: #55cbcd;
+    border: 2px solid #55cbcd;
+    border-radius: 8px;
+}
+
+#add-post-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-post {
+    width: 50%;
+}

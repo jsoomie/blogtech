@@ -8,7 +8,6 @@ const SequelizeStore = require("connect-session-sequelize");
 const mysql = require("mysql2");
 const session = require("express-session");
 const bcrypt = require("bcrypt");
-const { urlencoded } = require("express");
 
 // Port
 const PORT = process.env.PORT || 3001;
@@ -39,6 +38,13 @@ app.get("/", (req, res) => {
 app.get("/dashboard", (req, res) => {
     res.render("dashboard", {
         title: "DASHBOARD",
+    });
+});
+
+// testing login page
+app.get("/login", (req, res) => {
+    res.render("login", {
+        title: "LOGIN",
     });
 });
 
