@@ -9,6 +9,9 @@ const mysql = require("mysql2");
 const session = require("express-session");
 const bcrypt = require("bcrypt");
 
+// Routes
+const router = require("./controllers/router");
+
 // Port
 const PORT = process.env.PORT || 3001;
 
@@ -27,26 +30,8 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Testing home page
-app.get("/", (req, res) => {
-    res.render("index", {
-        title: "BLOGTECH",
-    });
-});
-
-// Testing dashboard page
-app.get("/dashboard", (req, res) => {
-    res.render("dashboard", {
-        title: "DASHBOARD",
-    });
-});
-
-// testing login page
-app.get("/login", (req, res) => {
-    res.render("login", {
-        title: "LOGIN",
-    });
-});
+// Routes
+app.use(router);
 
 // 404 catch all
 app.use((req, res) => {
