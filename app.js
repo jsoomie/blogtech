@@ -2,18 +2,26 @@
 const express = require("express");
 const app = express();
 const hbs = require("express-handlebars");
-const Sequelize = require("sequelize");
-require("dotenv").config();
 const SequelizeStore = require("connect-session-sequelize");
 const mysql = require("mysql2");
 const session = require("express-session");
 const bcrypt = require("bcrypt");
+
+const sequelize = require("./config/connection");
 
 // Routes
 const router = require("./controllers/router");
 
 // Port
 const PORT = process.env.PORT || 3001;
+
+//testing database
+sequelize
+    .authenticate()
+    .then(() => {
+        console.log(`Database: ${process.env.DB_NAME} has been connected...`);
+    })
+    .catch((err) => console.log(`ERR: ${err}`));
 
 // engine settings
 app.set("view engine", "hbs");
@@ -39,7 +47,6 @@ app.use((req, res) => {
         title: "404 - Page Not Found",
     });
 });
-
 // start server, will sequelize after working things work
 app.listen(PORT, (err) => {
     if (err) {
