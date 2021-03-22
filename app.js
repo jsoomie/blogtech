@@ -7,6 +7,7 @@ const mysql = require("mysql2");
 const session = require("express-session");
 const bcrypt = require("bcrypt");
 
+// brings in db connection
 const sequelize = require("./config/connection");
 
 // Routes
