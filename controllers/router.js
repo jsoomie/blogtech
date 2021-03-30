@@ -1,5 +1,7 @@
-const express = require("express");
-const router = express.Router();
+// brings in router
+const router = require("express").Router();
+// brings the auth in
+const auth = require("../utils/auth");
 
 // Testing home page
 router.get("/", (req, res) => {

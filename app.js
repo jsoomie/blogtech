@@ -3,26 +3,29 @@ const express = require("express");
 const app = express();
 const hbs = require("express-handlebars");
 const SequelizeStore = require("connect-session-sequelize");
-const mysql = require("mysql2");
 const session = require("express-session");
-const bcrypt = require("bcrypt");
 
 // brings in db connection
 const sequelize = require("./config/connection");
 
 // Routes
-const router = require("./controllers/router");
+const router = require("./controllers/");
 
 // Port
 const PORT = process.env.PORT || 3001;
 
-//testing database
-sequelize
-    .authenticate()
-    .then(() => {
-        console.log(`Database: ${process.env.DB_NAME} has been connected...`);
-    })
-    .catch((err) => console.log(`ERR: ${err}`));
+// Seesion setup
+const sess = {
+    secret: "If this real then this is fake sortof",
+    cookie: {},
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+        db: sequelize,
+    }),
+};
+
+app.use(session(sess));
 
 // engine settings
 app.set("view engine", "hbs");
@@ -39,7 +42,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Routes
+// Routers
 app.use(router);
 
 // 404 catch all
@@ -48,6 +51,7 @@ app.use((req, res) => {
         title: "404 - Page Not Found",
     });
 });
+
 // start server, will sequelize after working things work
 app.listen(PORT, (err) => {
     if (err) {
