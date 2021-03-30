@@ -25,7 +25,7 @@ const sess = {
     }),
 };
 
-// app.use(session(sess));
+app.use(session(sess));
 
 // engine settings
 app.set("view engine", "hbs");
