@@ -11,6 +11,7 @@ router.get("/", async (req, res) => {
         console.log("This is the backend");
         const posts = await Post.findAll({
             include: [User],
+            raw: true,
         });
 
         console.log(posts);

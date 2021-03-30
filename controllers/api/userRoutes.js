@@ -1,10 +1,13 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
+// This isn't needed for the app, but used for postman to get to view.
 router.get("/", async (req, res) => {
     try {
-        const users = await User.findAll();
-        console.log(users);
+        const users = await User.findAll({
+            raw: true,
+        });
+
         res.status(200).json(users);
     } catch (err) {
         console.log(err);
@@ -12,7 +15,7 @@ router.get("/", async (req, res) => {
     }
 });
 
-router.post("/", async (req, res) => {
+router.post("/create", async (req, res) => {
     try {
         // Creates new user based on input
         const newUser = await User.create({
