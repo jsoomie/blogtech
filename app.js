@@ -2,14 +2,14 @@
 const express = require("express");
 const app = express();
 const hbs = require("express-handlebars");
-const SequelizeStore = require("connect-session-sequelize");
 const session = require("express-session");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 // brings in db connection
 const sequelize = require("./config/connection");
 
 // Routes
-const router = require("./controllers/");
+const router = require("./controllers");
 
 // Port
 const PORT = process.env.PORT || 3001;
@@ -25,7 +25,7 @@ const sess = {
     }),
 };
 
-app.use(session(sess));
+// app.use(session(sess));
 
 // engine settings
 app.set("view engine", "hbs");
