@@ -1,13 +1,28 @@
 // brings in router
 const router = require("express").Router();
-// brings the auth in
+// brings the auth in // will user later
 const auth = require("../utils/auth");
 
-// Testing home page
-router.get("/", (req, res) => {
-    res.render("index", {
-        title: "BLOGTECH",
-    });
+const { User, Post, Comment } = require("../models");
+
+// GET homepage
+router.get("/", async (req, res) => {
+    try {
+        console.log("This is the backend");
+        const posts = await Post.findAll({
+            include: [User],
+        });
+
+        console.log(posts);
+
+        // RENDER
+        res.render("index", {
+            title: "BLOGTECH",
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
 });
 
 // Testing dashboard page
