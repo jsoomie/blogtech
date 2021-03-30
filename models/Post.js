@@ -1,13 +1,42 @@
-const Sequelize = require("sequelize");
+// import important parts of sequelize library
+const { Model, DataTypes, DATE } = require("sequelize");
+// import our database connection from config.js
 const sequelize = require("../config/connection");
 
-const Post = sequelize.define("post", {
-    title: {
-        type: Sequelize.STRING,
+class Post extends Model {}
+
+Post.init(
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: "user",
+                key: "id",
+            },
+        },
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        body: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
     },
-    body: {
-        type: Sequelize.STRING,
-    },
-});
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: "post",
+    }
+);
 
 module.exports = Post;
