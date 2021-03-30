@@ -8,8 +8,8 @@ CREATE TABLE user(
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(128) NOT NULL,
-    createdAt DATE, 
-    updatedAt DATE
+    createdAt DATETIME, 
+    updatedAt DATETIME
 );
 
 CREATE TABLE post(
@@ -18,8 +18,8 @@ CREATE TABLE post(
     FOREIGN KEY(user_id) REFERENCES user(id),
     title VARCHAR(100) NOT NULL,
     body VARCHAR(255) NOT NULL,
-    createdAt DATE, 
-    updatedAt DATE
+    createdAt DATETIME, 
+    updatedAt DATETIME
 );
 
 CREATE TABLE comment(
@@ -28,16 +28,16 @@ CREATE TABLE comment(
     FOREIGN KEY(user_id) REFERENCES user(id),
     post_id INT NOT NULL,
     FOREIGN KEY(post_id) REFERENCEs post(id),
-    createdAt DATE, 
-    updatedAt DATE
+    createdAt DATETIME, 
+    updatedAt DATETIME
 );
 
 CREATE TABLE Session(
     sid VARCHAR(36) PRIMARY KEY,
     expires DATETIME,
     data TEXT,
-    createdAt DATE,
-    updatedAt DATE
+    createdAt DATETIME,
+    updatedAt DATETIME
 );
 
 
