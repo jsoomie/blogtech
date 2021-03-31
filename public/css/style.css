@@ -1,0 +1,77 @@
+/* Imports font "source sans pro" */
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import "./footer.css";
+@import "./nav.css";
+@import "./404.css";
+@import "./dashboard.css";
+@import "./index.css";
+
+:root {
+    --test: 1px solid red;
+}
+
+/* ALL SELECTOR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: antiquewhite;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Utils */
+.main-container {
+    padding: 1rem;
+}
+
+.container {
+    padding: 1rem;
+}
+
+.container-vp {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.vp {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.center-flex {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.center-block {
+    display: block !important;
+    margin: 0 auto !important;
+    width: fit-content;
+}
+
+.hide {
+    display: none;
+}
+
+/* BUTTONS */
+.button {
+    padding: 1rem;
+    color: white;
+    background-color: #55cbcd;
+    border: 2px solid #55cbcd;
+    border-radius: 8px;
+}

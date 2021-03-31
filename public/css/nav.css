@@ -2,6 +2,8 @@
     padding: 1rem;
     background-color: #abdee6;
     color: #333;
+    padding-bottom: 1.5rem;
+    box-shadow: 0 0 10px gray;
 }
 
 #nav-container li {

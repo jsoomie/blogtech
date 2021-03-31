@@ -1,72 +1,12 @@
-/* Imports font "source sans pro" */
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
-@import "./footer.css";
-@import "./nav.css";
-@import "./404.css";
-@import "./dashboard.css";
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: antiquewhite;
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
-li {
-    list-style-type: none;
-}
-
-a {
-    text-decoration: none;
-    color: #333;
-}
-
-.main-container {
-    padding: 1rem;
-}
-
-.container {
-    padding: 1rem;
-}
-
-.center-flex {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-}
-
-.center-block {
-    display: block !important;
-    margin: 0 auto !important;
-}
-
-.msg-container {
-    padding: 1rem;
-}
-
-.msg-container li {
-    margin-top: 0.7rem;
-    margin-bottom: 0.7rem;
-}
-
-.msg-container h2 {
+#post-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #abdee6;
-    padding: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.msg-container p {
-    background-color: #eceae4;
-    padding: 1rem;
-}
-
-.button {
-    padding: 1rem;
-    color: white;
-    background-color: #55cbcd;
-    border: 2px solid #55cbcd;
-    border-radius: 8px;
+#post-display p {
+    text-align: right;
 }
