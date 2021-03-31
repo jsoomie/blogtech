@@ -13,17 +13,17 @@ router.get("/", async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ["id", "name"],
+                    attributes: { exclude: "password" },
                 },
             ],
-            raw: true,
         });
 
-        console.log(posts);
+        const postings = posts.map((post) => post.get({ plain: true }));
 
         // RENDER
         res.render("index", {
             title: "BLOGTECH",
+            postings,
         });
     } catch (err) {
         console.log(err);
@@ -32,7 +32,8 @@ router.get("/", async (req, res) => {
 });
 
 // Testing dashboard page
-router.get("/dashboard", (req, res) => {
+router.get("/dashboard", async (req, res) => {
+    const users = await User.findAll();
     res.render("dashboard", {
         title: "DASHBOARD",
     });

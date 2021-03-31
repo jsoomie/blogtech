@@ -28,6 +28,7 @@ CREATE TABLE comment(
     FOREIGN KEY(user_id) REFERENCES user(id),
     post_id INT NOT NULL,
     FOREIGN KEY(post_id) REFERENCEs post(id),
+    body VARCHAR(255) NOT NULL,
     createdAt DATETIME, 
     updatedAt DATETIME
 );
