@@ -15,6 +15,7 @@ router.get("/", async (req, res) => {
     }
 });
 
+// Creates new user
 router.post("/create", async (req, res) => {
     try {
         // Creates new user based on input

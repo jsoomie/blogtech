@@ -10,7 +10,12 @@ router.get("/", async (req, res) => {
     try {
         console.log("This is the backend");
         const posts = await Post.findAll({
-            include: [User],
+            include: [
+                {
+                    model: User,
+                    attributes: ["id", "name"],
+                },
+            ],
             raw: true,
         });
 
