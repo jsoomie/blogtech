@@ -51,6 +51,10 @@ a {
     padding-bottom: 0.5rem;
 }
 
+.marginall {
+    margin: 2rem;
+}
+
 .center-flex {
     display: flex !important;
     justify-content: center !important;

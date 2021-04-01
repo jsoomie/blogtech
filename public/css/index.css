@@ -1,12 +1,90 @@
-#post-display {
+.post-display {
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-flow: row wrap;
     background-color: #abdee6;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
 }
 
-#post-display p {
+.post-display p {
     text-align: right;
+}
+
+.breaker {
+    flex-basis: 100%;
+}
+
+.posted-user {
+    font-weight: 800;
+    letter-spacing: 0.2rem;
+    border-bottom: 1px solid gray;
+}
+
+.posted-title {
+    font-weight: bold;
+    border-bottom: 1px solid gray;
+}
+
+.details {
+    width: 100%;
+    background-color: antiquewhite;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.user-name-icon {
+    display: flex;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.user-name {
+    display: flex;
+    font-weight: 800;
+    letter-spacing: 0.2rem;
+    width:100%;
+}
+
+.comment-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: row wrap;
+}
+
+.user-comment {
+    border-bottom: 1px solid gray;
+}
+
+.add-comments {
+    border-bottom: 1px solid gray;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.add-comments label {
+    margin-right: 1rem;
+}
+
+.add-comments input:focus {
+    outline: none;
+}
+
+.add-comments input {
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    flex: 1;
+}
+
+.add-comments button {
+    background-color: transparent;
+    padding: 0 0.5rem;
 }

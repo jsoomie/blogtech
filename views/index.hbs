@@ -6,20 +6,57 @@
     <h1 class="vp">Recent Blogs</h1>
 
     {{#each postings}}
-    <div class="container" id="post-display">
-        <div>
-            <h2>{{title}}</h2>
+    <div class="post-check">
+
+        <div class="post-display container" data-checkit="{{id}}">
+            <div data-id="{{id}}">
+                <h2 class="posted-title">{{title}}</h2>
+            </div>
+            <div>
+                <p>
+                    Posted By:
+                </p>
+                <p class="posted-user">
+                    {{user.name}}
+                </p>
+            </div>
+            <div class="breaker"></div>
+            <div class="vp">
+                {{body}}
+            </div>
+            <div class="breaker"></div>
+            <p class="center-block"><i class="fas fa-chevron-circle-down"></i> View comments</p>
+            <div class="details vp hide">
+                {{#each this.comments}}
+                <div class="comment-container">
+                    <div class="user-name-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="user-name">
+                        {{this.user.name}}
+                    </div>
+                </div>
+                <div class="user-comment">
+                    {{body}}
+                </div>
+                <div class="vp"></div>
+                {{/each}}
+            </div>
         </div>
-        <div>
-            <p>
-                Posted By:
-            </p>
-            <p>
-                {{user.name}}
-            </p>
+        <form class="add-comments">
+            <label for="submit">Comment: </label>
+            <input type="text" class="inputStuff">
+            <button>ADD COMMENTS</button>
+        </form>
+        <div class="marginall"></div>
+        <div class="center-flex">
+            <i class="fas fa-circle"></i>
+            <i class="far fa-circle"></i>
+            <i class="fas fa-circle"></i>
         </div>
+        {{/each}}
+
     </div>
-    {{/each}}
 </div>
 
 {{!-- jquery --}}

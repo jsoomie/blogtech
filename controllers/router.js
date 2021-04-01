@@ -8,17 +8,28 @@ const { User, Post, Comment } = require("../models");
 // GET homepage
 router.get("/", async (req, res) => {
     try {
-        console.log("This is the backend");
         const posts = await Post.findAll({
+            exclude: ["createdAt", "updatedAt"],
             include: [
                 {
                     model: User,
-                    attributes: { exclude: "password" },
+                    required: true,
+                    attributes: ["name"],
+                    exclude: ["password", "createdAt", "updatedAt"],
+                },
+                {
+                    model: Comment,
+                    required: true,
+                    attributes: ["user_id", "body"],
+                    include: [User],
                 },
             ],
         });
 
         const postings = posts.map((post) => post.get({ plain: true }));
+
+        // testing only
+        // posts.forEach((user) => console.log(user.toJSON()));
 
         // RENDER
         res.render("index", {
