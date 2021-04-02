@@ -67,6 +67,15 @@ a {
     width: fit-content;
 }
 
+/* Message containers */
+.msg-container {
+    padding: 1rem;
+}
+
+.msg-container h2 {
+    background-color: #abdee6;
+}
+
 .hide {
     display: none;
 }
