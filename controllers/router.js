@@ -50,6 +50,18 @@ router.get("/dashboard", async (req, res) => {
     });
 });
 
+router.get("/dashboard/details/:id", async (req, res) => {
+    try {
+        // insert get post id here
+    } catch (err) {
+        console.log(err);
+        res.status(404).end();
+    }
+    res.render("singlePost", {
+        title: "POST DETAILS",
+    });
+});
+
 // testing login page
 router.get("/login", (req, res) => {
     res.render("login", {

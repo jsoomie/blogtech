@@ -1,0 +1,11 @@
+:root {
+    --test: 1px solid red;
+
+    --white: antiquewhite;
+    --dark: #333;
+
+    --primary: #abdee6;
+    --dark-primary: #55cbcd;
+
+    --secondary: #cbaacb;
+}

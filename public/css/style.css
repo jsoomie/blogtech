@@ -1,15 +1,13 @@
 /* Imports font "source sans pro" */
 /* IMPORTS */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import "./variables.css";
 @import "./footer.css";
 @import "./nav.css";
 @import "./404.css";
 @import "./dashboard.css";
 @import "./index.css";
-
-:root {
-    --test: 1px solid red;
-}
+@import "./login.css";
 
 /* ALL SELECTOR */
 * {
@@ -19,7 +17,7 @@
 }
 
 body {
-    background-color: antiquewhite;
+    background-color: var(--white);
     font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -75,7 +73,7 @@ a {
 .button {
     padding: 1rem;
     color: white;
-    background-color: #55cbcd;
-    border: 2px solid #55cbcd;
+    background-color: var(--dark-primary);
+    border: 2px solid var(--dark-primary);
     border-radius: 8px;
 }
