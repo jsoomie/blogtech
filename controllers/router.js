@@ -42,37 +42,61 @@ router.get("/", async (req, res) => {
     }
 });
 
-// Testing dashboard page
+// gets dashboard page
 router.get("/dashboard", async (req, res) => {
-    const users = await User.findAll();
-    res.render("dashboard", {
-        title: "DASHBOARD",
-    });
-});
-
-router.get("/dashboard/details/:id", async (req, res) => {
     try {
-        // insert get post id here
+        const userID = req.body.user_id;
+        const users = await User.findAll();
+
+        // RENDER
+        res.render("dashboard", {
+            title: "DASHBOARD",
+        });
     } catch (err) {
         console.log(err);
         res.status(404).end();
     }
-    res.render("singlePost", {
-        title: "POST DETAILS",
-    });
 });
 
-// testing login page
+// gets details on a single blog
+router.get("/dashboard/details/:id", async (req, res) => {
+    try {
+        // insert get post id here
+
+        // RENDER
+        res.render("singlePost", {
+            title: "POST DETAILS",
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(404).end();
+    }
+});
+
+// getslogin page
 router.get("/login", (req, res) => {
-    res.render("login", {
-        title: "LOGIN",
-    });
+    try {
+        // RENDER
+        res.render("login", {
+            title: "LOGIN",
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(404).end();
+    }
 });
 
+// gets signup page
 router.get("/signup", (req, res) => {
-    res.render("signup", {
-        title: "SIGN UP",
-    });
+    try {
+        // RENDER
+        res.render("signup", {
+            title: "SIGN UP",
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(404).end();
+    }
 });
 
 module.exports = router;
