@@ -7,3 +7,17 @@
 #add-post {
     width: 50%;
 }
+
+/* Message containers */
+
+.msg-container {
+    padding: 1rem;
+}
+
+.msg-container li {
+    padding: 0.5rem;
+}
+
+.ul-container li {
+    background-color: #abdee6;
+}
