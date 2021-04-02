@@ -8,8 +8,14 @@ $(document).ready(() => {
 
         $(".details", this).slideToggle();
     });
+
+    // Opens comments section when add comments is clicked
     $(".inputStuff").click(function () {
-        // trying to find the details to open up
-        $(this).parents(".post-check");
+        const commentlist = $(this)
+            .closest(".add-comments")
+            .siblings(".post-display")
+            .find(".details:first");
+
+        commentlist.slideDown();
     });
 });
