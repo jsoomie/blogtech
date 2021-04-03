@@ -18,7 +18,7 @@ router.get("/", auth, async (req, res) => {
 router.post("/create", auth, async (req, res) => {
     try {
         const newPost = await Post.create({
-            user_id: req.body.user_id,
+            userID: req.body.user_id,
             title: req.body.title,
             body: req.body.body,
         });

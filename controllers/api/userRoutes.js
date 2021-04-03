@@ -27,12 +27,13 @@ router.post("/create", async (req, res) => {
 
         // starts new session and saves them as logged in
         req.session.save(() => {
+            console.log("INSDIE SESSION");
             req.session.userID = newUser.id;
             req.session.name = newUser.name;
             req.session.loggedIn = true;
-        });
 
-        res.status(200).json(newUser);
+            res.status(200).json(newUser);
+        });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -70,13 +71,13 @@ router.post("/login", async (req, res) => {
 
         // creates session for user
         req.session.save(() => {
-            req.session.user_id = user.id;
+            req.session.userID = user.id;
             req.session.name = user.name;
             req.session.loggedIn = true;
-        });
 
-        res.status(200).json({
-            message: "You are now logged in!",
+            res.status(200).json({
+                message: "You are now logged in!",
+            });
         });
     } catch (err) {
         console.log(err);
@@ -86,10 +87,13 @@ router.post("/login", async (req, res) => {
 
 // logout destroys session
 router.post("/logout", async (req, res) => {
+    console.log("logout");
     if (req.session.loggedIn) {
         req.session.destroy(() => {
-            res.status(204).end();
+            res.status(200);
         });
+
+        res.redirect("/login");
     } else {
         res.status(404).end();
     }

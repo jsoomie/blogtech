@@ -6,7 +6,7 @@ const auth = require("../utils/auth");
 const { User, Post, Comment } = require("../models");
 
 // GET homepage
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
     try {
         const posts = await Post.findAll({
             exclude: ["createdAt", "updatedAt"],
@@ -43,7 +43,7 @@ router.get("/", async (req, res) => {
 });
 
 // gets dashboard page
-router.get("/dashboard", async (req, res) => {
+router.get("/dashboard", auth, async (req, res) => {
     try {
         const userID = req.body.user_id;
         const users = await User.findAll();

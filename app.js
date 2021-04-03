@@ -3,10 +3,10 @@ const express = require("express");
 const app = express();
 const hbs = require("express-handlebars");
 const session = require("express-session");
-const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 // brings in db connection
 const sequelize = require("./config/connection");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 // Routes
 const router = require("./controllers");
@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3001;
 
 // Seesion setup
 const sess = {
-    secret: "If this real then this is fake sortof",
+    secret: "Super hush hush",
     cookie: {},
     resave: false,
     saveUninitialized: true,
