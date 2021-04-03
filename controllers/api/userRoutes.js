@@ -39,4 +39,32 @@ router.post("/create", async (req, res) => {
     }
 });
 
+// login
+router.post("/login", async (req, res) => {
+    try {
+        console.log("\nuser routes beginning\n");
+        const user = await User.findOne({
+            where: {
+                name: req.body.name,
+            },
+        });
+        console.log(user);
+        console.log("\nuser routes end\n");
+    } catch (err) {
+        console.log(err);
+        res.status(400).json(err);
+    }
+});
+
+// logout destroys session
+router.post("/logout", async (req, res) => {
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    } else {
+        res.status(404).end();
+    }
+});
+
 module.exports = router;
