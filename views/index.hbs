@@ -46,9 +46,10 @@
         <form class="add-comments">
             <label for="submit">Comment: </label>
             <input type="text" class="inputStuff">
-            <button>ADD COMMENTS</button>
+            <button class="comment-button" data-id="{{this.id}}">ADD COMMENTS</button>
         </form>
-        <div class="marginall"></div>
+        <div class=" marginall">
+        </div>
         <div class="center-flex">
             <i class="fas fa-circle"></i>
             <i class="far fa-circle"></i>
@@ -64,3 +65,4 @@
 
 {{!-- scripts --}}
 <script src="/js/index.js"></script>
+<script src="/js/comment.js"></script>

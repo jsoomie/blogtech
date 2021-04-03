@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Comment } = require("../../models");
+const auth = require("../../utils/auth");
 
 // Just for postman
 router.get("/", async (req, res) => {
@@ -14,12 +15,11 @@ router.get("/", async (req, res) => {
 });
 
 // Creats new post based on user_id and post_id
-router.post("/create", async (req, res) => {
+router.post("/create", auth, async (req, res) => {
     try {
         const newComment = await Comment.create({
-            user_id: req.body.user_id,
-            post_id: req.body.post_id,
-            body: req.body.body,
+            ...req.body,
+            user_id: req.session.userID,
         });
 
         res.status(200).json(newComment);

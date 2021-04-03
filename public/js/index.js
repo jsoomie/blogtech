@@ -1,6 +1,4 @@
 $(document).ready(() => {
-    console.log("HELLO FROM INDEX");
-
     $(".post-display").click(function (e) {
         e.preventDefault();
 
