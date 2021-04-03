@@ -3,7 +3,7 @@ const { Post } = require("../../models");
 const auth = require("../../utils/auth");
 
 // Just for postman to view
-router.get("/", auth, async (req, res) => {
+router.get("/", async (req, res) => {
     try {
         const posts = await Post.findAll();
 
@@ -18,7 +18,7 @@ router.get("/", auth, async (req, res) => {
 router.post("/create", auth, async (req, res) => {
     try {
         const newPost = await Post.create({
-            userID: req.body.user_id,
+            user_id: req.session.userID,
             title: req.body.title,
             body: req.body.body,
         });

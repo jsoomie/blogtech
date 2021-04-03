@@ -3,6 +3,11 @@
     margin: 0 auto;
 }
 
+#dashboard-addpost {
+    display: block;
+    margin: 0 auto;
+}
+
 #add-post {
     width: 50%;
 }

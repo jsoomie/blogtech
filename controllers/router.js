@@ -19,7 +19,6 @@ router.get("/", auth, async (req, res) => {
                 },
                 {
                     model: Comment,
-                    required: true,
                     attributes: ["user_id", "body"],
                     include: [User],
                 },
@@ -48,19 +47,21 @@ router.get("/", auth, async (req, res) => {
 router.get("/dashboard", auth, async (req, res) => {
     try {
         const userID = req.session.userID;
-        const users = await Post.findAll({
+        const userpost = await Post.findAll({
             where: {
-                id: userID,
+                user_id: userID,
             },
+            raw: true,
         });
 
-        console.log(users);
+        console.log(userpost);
 
         // RENDER
         res.render("dashboard", {
             title: "DASHBOARD",
             loggedIn: req.session.loggedIn,
             username: req.session.name,
+            userpost,
         });
     } catch (err) {
         console.log(err);
