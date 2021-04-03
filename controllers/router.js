@@ -36,6 +36,7 @@ router.get("/", auth, async (req, res) => {
             title: "BLOGTECH",
             postings,
             loggedIn: req.session.loggedIn,
+            username: req.session.name,
         });
     } catch (err) {
         console.log(err);
@@ -59,6 +60,7 @@ router.get("/dashboard", auth, async (req, res) => {
         res.render("dashboard", {
             title: "DASHBOARD",
             loggedIn: req.session.loggedIn,
+            username: req.session.name,
         });
     } catch (err) {
         console.log(err);
@@ -75,6 +77,7 @@ router.get("/dashboard/details/:id", auth, async (req, res) => {
         res.render("singlePost", {
             title: "POST DETAILS",
             loggedIn: req.session.loggedIn,
+            username: req.session.name,
         });
     } catch (err) {
         console.log(err);
@@ -87,6 +90,7 @@ router.get("/dashboard/add", auth, async (req, res) => {
         res.render("addPost", {
             title: "ADD POST",
             loggedIn: req.session.loggedIn,
+            username: req.session.name,
         });
     } catch (err) {
         console.log(err);
@@ -101,6 +105,7 @@ router.get("/login", (req, res) => {
         res.render("login", {
             title: "LOGIN",
             loggedIn: req.session.loggedIn,
+            username: req.session.name,
         });
     } catch (err) {
         console.log(err);
@@ -115,6 +120,7 @@ router.get("/signup", (req, res) => {
         res.render("signup", {
             title: "SIGN UP",
             loggedIn: req.session.loggedIn,
+            username: req.session.name,
         });
     } catch (err) {
         console.log(err);

@@ -1,12 +1,12 @@
 <div id="nav-container">
     <ul id="nav-bar">
         <li><a href="/">Home</a></li>
-        <li><a href="dashboard">Dashboard</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
 
         {{#if loggedIn}}
-        <li><a href="logout" id="logout">Logout</a></li>
+        <li><a href="/logout" id="logout">Logout({{username}})</a></li>
         {{else}}
-        <li><a href="login">Login</a></li>
+        <li><a href="/login">Login</a></li>
         {{/if}}
     </ul>
 

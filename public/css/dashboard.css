@@ -1,7 +1,6 @@
 #add-post-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
+    margin: 0 auto;
 }
 
 #add-post {
@@ -23,11 +22,42 @@
 }
 
 /* ADD POST  */
-#add-post-container {
-    width: 70%;
+
+.add-post-container {
     text-align: center;
 }
 
+#add-post-container {
+    width: 70%;
+    text-align: center;
+    border: 1px solid var(--secondary);
+    background-color: var(--secondary);
+}
+
+#add-post-container h1 {
+    padding: 0.5rem;
+    margin: 1rem;
+    border-bottom: 1px solid var(--white);
+    
+}
+
 #add-post-container label {
-    text-align: left !important;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#add-post-container input,
+#add-post-container textarea {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 0.5rem;
+}
+
+#add-post-container textarea {
+    resize: none;
+}
+
+#add-post-container input {
+    height: 2rem;
 }

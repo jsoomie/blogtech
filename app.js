@@ -46,9 +46,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(router);
 
 // 404 catch all
-app.use((req, res) => {
+router.use((req, res) => {
     res.status(404).render("404", {
         title: "404 - Page Not Found",
+        loggedIn: req.session.loggedIn,
+        username: req.session.name,
     });
 });
 

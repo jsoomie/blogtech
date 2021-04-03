@@ -27,7 +27,6 @@ router.post("/create", async (req, res) => {
 
         // starts new session and saves them as logged in
         req.session.save(() => {
-            console.log("INSDIE SESSION");
             req.session.userID = newUser.id;
             req.session.name = newUser.name;
             req.session.loggedIn = true;
@@ -87,15 +86,17 @@ router.post("/login", async (req, res) => {
 
 // logout destroys session
 router.post("/logout", async (req, res) => {
-    console.log("logout");
-    if (req.session.loggedIn) {
-        req.session.destroy(() => {
-            res.status(200);
-        });
+    try {
+        if (req.session.loggedIn) {
+            req.session.destroy(() => {
+                res.status(200);
+            });
 
-        res.redirect("/login");
-    } else {
-        res.status(404).end();
+            res.redirect("/login");
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
     }
 });
 
