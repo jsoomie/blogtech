@@ -46,8 +46,14 @@ router.get("/", auth, async (req, res) => {
 // gets dashboard page
 router.get("/dashboard", auth, async (req, res) => {
     try {
-        const userID = req.body.user_id;
-        const users = await User.findAll();
+        const userID = req.session.userID;
+        const users = await Post.findAll({
+            where: {
+                id: userID,
+            },
+        });
+
+        console.log(users);
 
         // RENDER
         res.render("dashboard", {
@@ -61,7 +67,7 @@ router.get("/dashboard", auth, async (req, res) => {
 });
 
 // gets details on a single blog
-router.get("/dashboard/details/:id", async (req, res) => {
+router.get("/dashboard/details/:id", auth, async (req, res) => {
     try {
         // insert get post id here
 
@@ -73,6 +79,18 @@ router.get("/dashboard/details/:id", async (req, res) => {
     } catch (err) {
         console.log(err);
         res.status(404).end();
+    }
+});
+
+router.get("/dashboard/add", auth, async (req, res) => {
+    try {
+        res.render("addPost", {
+            title: "ADD POST",
+            loggedIn: req.session.loggedIn,
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
     }
 });
 

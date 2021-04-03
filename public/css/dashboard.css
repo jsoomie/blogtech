@@ -21,3 +21,13 @@
 .ul-container li {
     background-color: #abdee6;
 }
+
+/* ADD POST  */
+#add-post-container {
+    width: 70%;
+    text-align: center;
+}
+
+#add-post-container label {
+    text-align: left !important;
+}
