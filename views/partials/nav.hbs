@@ -2,8 +2,12 @@
     <ul id="nav-bar">
         <li><a href="/">Home</a></li>
         <li><a href="dashboard">Dashboard</a></li>
-        <li><a href="login">Login</a></li>
+
+        {{#if loggedIn}}
         <li><a href="logout" id="logout">Logout</a></li>
+        {{else}}
+        <li><a href="login">Login</a></li>
+        {{/if}}
     </ul>
 
     <h1 id="nav-title"><i>{{title}}</i></h1>
