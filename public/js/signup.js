@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
 
                 if (res.ok) {
-                    res.redirect("/");
+                    document.location.replace("/");
                 } else {
                     alert("Sign up failed");
                 }

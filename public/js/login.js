@@ -14,5 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
             body,
             headers: { "Content-Type": "application/json" },
         });
+
+        if (res.ok) {
+            document.location.replace("/dashboard");
+        } else {
+            alert("Username or password doesn't exist or match!");
+        }
     });
 });

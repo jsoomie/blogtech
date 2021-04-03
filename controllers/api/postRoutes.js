@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const { Post } = require("../../models");
+const auth = require("../../utils/auth");
 
 // Just for postman to view
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
     try {
         const posts = await Post.findAll();
 
@@ -14,7 +15,7 @@ router.get("/", async (req, res) => {
 });
 
 // Creates new post
-router.post("/create", async (req, res) => {
+router.post("/create", auth, async (req, res) => {
     try {
         const newPost = await Post.create({
             user_id: req.body.user_id,
