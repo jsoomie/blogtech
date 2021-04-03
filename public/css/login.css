@@ -38,3 +38,10 @@
     text-align: center;
     font-size: 1.2rem;
 }
+
+#wrong-password-container {
+    border: 1px solid #ff968a;
+    padding: 0.3rem;
+    margin-top: 0.5rem;
+    background-color: #ff968a;
+}

@@ -1,3 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("Hello from main");
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//     console.log("Hello from main");
+// });

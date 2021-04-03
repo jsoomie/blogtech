@@ -3,21 +3,39 @@
         <h1>Sign Up</h1>
         <form>
             <div>
-                <label for="new-usernam">Username</label>
+                <label for="new-username">Username</label>
                 <br>
-                <input type="text">
+                <input type="text" id="signup-username">
+            </div>
+            <br>
+            <div>
+                <label for="new-email">Email</label>
+                <br>
+                <input type="email" id="signup-email">
             </div>
             <br>
             <div>
                 <label for="new-password">Password</label>
                 <br>
-                <input type="password">
+                <input type="password" id="signup-password">
             </div>
             <br>
-            <button class="button center-block">Sign Up</button>
+            <div>
+                <label for="confirm-password"> Confirm Password</label>
+                <br>
+                <input type="password" id="signup-password-confirm">
+            </div>
+            <div id="wrong-password-container" class="hide">
+                <h2>Passwords do not match!</h3>
+            </div>
+            <br>
+            <button class="button center-block" id="signup-button">Sign Up</button>
         </form>
         <a href="/login">
             <p class="center-block vp">Login instead</p>
         </a>
     </div>
 </div>
+
+{{!-- Script --}}
+<script src="/js/signup.js"></script>

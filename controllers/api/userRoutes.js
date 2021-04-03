@@ -28,11 +28,11 @@ router.post("/create", async (req, res) => {
         // starts new session and saves them as logged in
         req.session.save(() => {
             req.session.userID = newUser.id;
-            req.session.username = newUser.username;
+            req.session.name = newUser.name;
             req.session.loggedIn = true;
         });
 
-        res.json(newUser);
+        res.status(200).json(newUser);
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
