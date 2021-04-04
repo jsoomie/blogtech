@@ -54,8 +54,6 @@ router.get("/dashboard", auth, async (req, res) => {
             raw: true,
         });
 
-        console.log(userpost);
-
         // RENDER
         res.render("dashboard", {
             title: "DASHBOARD",
@@ -83,7 +81,6 @@ router.get("/dashboard/details/:id", auth, async (req, res) => {
         });
 
         const post = postData.get({ plain: true });
-        console.log(post);
 
         // RENDER
         res.render("singlePost", {

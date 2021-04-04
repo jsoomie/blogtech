@@ -4,16 +4,16 @@
         <div class="edit-container">
             <div class="edit-buttons-container">
                 <div>
-                    <button>CONFIRM EDIT</button>
+                    <button id="confirm-edit">CONFIRM EDIT</button>
                 </div>
                 <div>
-                    <button>DELETE</button>
+                    <button id="confirm-delete">DELETE</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container" id="singlepost-container">
+    <div class="container" id="singlepost-container" data-id="{{post.id}}">
         <form>
             <div>
                 <label>Click to edit: </label>
@@ -31,8 +31,10 @@
         <h2>Comments:</h2>
         <ul>
             {{#each post.comments}}
-            <li>{{this.user.name}}: {{this.body}}</li>
+            <li><i class="fas fa-user-circle"></i> {{this.user.name}}: {{this.body}}</li>
             {{/each}}
         </ul>
     </div>
 </div>
+
+<script src="/js/singlePost.js"></script>

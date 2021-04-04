@@ -30,4 +30,52 @@ router.post("/create", auth, async (req, res) => {
     }
 });
 
+// updates post
+router.put("/details/:id", auth, async (req, res) => {
+    try {
+        const [edited] = await Post.update(req.body, {
+            where: {
+                id: req.params.id,
+            },
+        });
+
+        if (edited > 0) {
+            res.status(200).json(edited);
+        } else {
+            res.status(500);
+        }
+
+        // RENDER
+        res.render("singlePost", {
+            title: "POST DETAILS",
+            loggedIn: req.session.loggedIn,
+            username: req.session.name,
+            post,
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).end();
+    }
+});
+
+// deletes post
+router.delete("/details/:id", auth, async (req, res) => {
+    try {
+        const [edited] = await Post.destroy({
+            where: {
+                id: req.params.id,
+            },
+        });
+
+        if (edited > 0) {
+            res.status(200);
+        } else {
+            res.status(500);
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;
