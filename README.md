@@ -13,8 +13,8 @@
 This app is used to bloggers in the tech world! Just first sign up, then add a blog or comment on others!
 
 ## LINKS
-[Link to GitHub](https://github.com/sksmejn/blogtech)
-[Link to website!](https://stormy-journey-32666.herokuapp.com/)
+- [Link to GitHub](https://github.com/sksmejn/blogtech)
+- [Link to website!](https://stormy-journey-32666.herokuapp.com/)
 ## USAGE
 
 Just login or if you do not have an account, just sign up for one for free and use website however you want! Just add a blog or comment on others!
@@ -28,6 +28,6 @@ Feel free to add anything you wish!
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## SCREENSHOTS
-![homepage](./homepage.png)
-![dashboard](./dashboard.png)
+- ![homepage](./homepage.png)
+- ![dashboard](./dashboard.png)
 
