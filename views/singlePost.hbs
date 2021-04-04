@@ -1,6 +1,38 @@
 <div class="main-container">
-    <div class="container">
-        <h1>This is a single post!</h1>
-        <h1>edit( update, delete )</h1>
+    <div id="back-button-container">
+        <a href="/dashboard" class="back-button"><i class="fas fa-chevron-left"></i> Back </a>
+        <div class="edit-container">
+            <div class="edit-buttons-container">
+                <div>
+                    <button>CONFIRM EDIT</button>
+                </div>
+                <div>
+                    <button>DELETE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="singlepost-container">
+        <form>
+            <div>
+                <label>Click to edit: </label>
+                <br>
+                <input id="singlepost-title" type="text" placeholder="{{post.title}}">
+            </div>
+            <div>
+                <textarea name="singlepost-body" id="singlepost-body" cols="30" rows="10"
+                    placeholder="{{post.body}}"></textarea>
+            </div>
+        </form>
+    </div>
+
+    <div class="container singlepost-comments">
+        <h2>Comments:</h2>
+        <ul>
+            {{#each post.comments}}
+            <li>{{this.user.name}}: {{this.body}}</li>
+            {{/each}}
+        </ul>
     </div>
 </div>

@@ -72,13 +72,25 @@ router.get("/dashboard", auth, async (req, res) => {
 // gets details on a single blog
 router.get("/dashboard/details/:id", auth, async (req, res) => {
     try {
-        // insert get post id here
+        const postData = await Post.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Comment,
+                    attributes: ["user_id", "body"],
+                    include: [User],
+                },
+            ],
+        });
+
+        const post = postData.get({ plain: true });
+        console.log(post);
 
         // RENDER
         res.render("singlePost", {
             title: "POST DETAILS",
             loggedIn: req.session.loggedIn,
             username: req.session.name,
+            post,
         });
     } catch (err) {
         console.log(err);
