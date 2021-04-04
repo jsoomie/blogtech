@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const select = (x) => document.querySelector(x);
 
-    select("#submit-post").addEventListener("submit", async function (e) {
+    select("#submit-post").addEventListener("click", async function (e) {
         e.preventDefault();
 
         const title = select("#new-post-title").value.trim();
@@ -24,7 +24,5 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             alert("Please check all fields below!");
         }
-
-        console.log({ body });
     });
 });

@@ -39,18 +39,13 @@ router.put("/details/:id", auth, async (req, res) => {
             },
         });
 
-        if (edited > 0) {
-            res.status(200).json(edited);
-        } else {
-            res.status(500);
-        }
+        res.status(200);
 
         // RENDER
         res.render("singlePost", {
             title: "POST DETAILS",
             loggedIn: req.session.loggedIn,
             username: req.session.name,
-            post,
         });
     } catch (err) {
         console.log(err);
@@ -59,9 +54,9 @@ router.put("/details/:id", auth, async (req, res) => {
 });
 
 // deletes post
-router.delete("/details/:id", auth, async (req, res) => {
+router.delete("/details/:id", auth, (req, res) => {
     try {
-        const [edited] = await Post.destroy({
+        const [edited] = Post.destroy({
             where: {
                 id: req.params.id,
             },
