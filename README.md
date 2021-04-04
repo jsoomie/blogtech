@@ -28,6 +28,6 @@ Feel free to add anything you wish!
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## SCREENSHOTS
-![homepage]("./homepage.png")
-![dashboard]("./dashboard.png")
+![homepage](./homepage.png)
+![dashboard](./dashboard.png)
 
